@@ -1,0 +1,338 @@
+/* Setting the properties that are ordinary for the whole page */
+* {
+    background-color: black;
+    scroll-behavior: smooth;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* The hedding style */
+h1,
+h2 {
+    text-align: center;
+}
+
+/* The container that holds the main content  */
+#main-container {
+    display: flex;
+    margin: 4% auto;
+    width: 65rem;
+    height: 30rem;
+    border: 1px solid;
+}
+
+/* The container that holds the left side contents */
+#first-container {
+    display: block;
+    flex-grow: 2;
+    padding: 1em;
+}
+
+/* The container that holds the info about the game */
+#intro-container {
+    padding: 1em;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+
+/* The container that holds the bord and the feedback messages that are generated when it is touched  */
+#board-container {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 1em;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* The board section */
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+}
+
+/* The cells */
+#board button {
+    background-color: white;
+    color: black;
+    font-size: 40px;
+    width: 80px;
+    height: 80px;
+    margin: 1px 1px 0 0;
+    border-radius: 0;
+}
+
+#board button:hover,
+#board button:focus {
+    background-color: #68c1ff;
+}
+
+/* The container that holds the second and shrunken area of the page, which shows the info about the game flow */
+#game-info-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 10rem;
+    flex-shrink: 0;
+    padding: 1em;
+    border-left: 1px solid;
+    text-align: center;
+}
+
+/* The container that holds the section responsable for getting the name of who will play */
+#getting-players-name {
+    display: block;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* The container that shows the status of the game */
+#players-container {
+    display: none;
+    flex-direction: column;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+#player-1,
+#player-2 {
+    text-align: center;
+    margin-bottom: 0.8em;
+}
+
+#current-player-to-play,
+#standby-player {
+    max-width: 180px;
+}
+
+
+/* The area that displays the previews matches results  */
+#previews-matches {
+    text-align: center;
+    overflow: scroll;
+    height: 15rem;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* A custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #0368ce;
+    border-radius: 10px;
+}
+
+/* The hidden area that is set to send a feedback to voice screen readers such that they can anounce who is currently playing */
+#accessible-current-player-report {
+    color: transparent;
+}
+
+#status-player-1 {
+    color: lightgreen
+}
+
+#status-player-2 {
+    color: orange;
+}
+
+input,
+textarea {
+    outline: 0;
+    width: 90%;
+    height: 2%;
+    padding: 0.8em;
+    margin: 0.6em 0 0.6em 0em;
+    border: 2px solid #0368ce;
+}
+
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+    border-color: #68c1ff;
+}
+
+textarea {
+    width: 90%;
+    height: 120px;
+    line-height: 20px;
+    max-width: 400px;
+}
+
+button {
+    background-color: #0368ce;
+    width: 100%;
+    height: 10%;
+    margin: 0.8em 0 0.8em 0;
+    border-radius: 1em;
+    transition: background-color 1s, color 1s;
+}
+
+button:hover,
+button:focus {
+    background-color: #68c1ff;
+    color: black;
+    cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+#next-matches-default-msg {
+    animation-name: animatetop;
+    text-align: center;
+    animation-duration: 0.4s
+}
+
+#next-matches-default-msg button {
+    width: 45%;
+}
+
+#previews-matches {
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+#game-status-zone {
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+footer {
+    text-align: center;
+}
+
+.contacte-me-btn {
+    width: 80px;
+}
+
+/*The modal of the page*/
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: black;
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    width: 100%;
+    padding: 0.9em;
+}
+
+/* Modal Body */
+.modal-body {
+    display: flex;
+    padding: 2px 16px;
+    margin: auto;
+}
+
+.modal-body fieldset {
+    padding: 1em;
+    margin: 0.6em;
+}
+
+.close {
+    color: #aaa;
+    width: 5%;
+    float: right;
+    font-size: 28px;
+    margin-left: auto;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body form {
+    padding: 1em;
+}
+
+#area-form-checkout {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    padding: 1em;
+}
+
+#area-form-checkout:first-child {
+    display: block;
+}
+
+#area-form-checkout button {
+    margin-top: auto;
+}
+
+/* Modal Footer */
+.modal-footer {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 1em;
+}
+
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: black;
+    margin: auto;
+    padding: 0;
+    width: 50%;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.modal-content label {
+    margin: 1em;
+    font-weight: bold;
+}
+
+.modal--visible {
+    display: block;
+    justify-content: center;
+    align-items: center;
+}

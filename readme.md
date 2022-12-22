@@ -1,0 +1,3 @@
+# Head Burner
+Are you good at building strategies? Well, let's find out. With the Head Burner game, you and a friend may test each other with a fun hash challenge where whoever aligns correctly a sequence of items, wins a match.The first one who inputs their name will be represented by an o (circle), and the second one by a X.The criteria for being the winner is only one, one of you must align the item you are represented by vertically, horizontally or diagonally.Note: This game is currently in Portuguese, however its English version is coming soon!
+Have fun!

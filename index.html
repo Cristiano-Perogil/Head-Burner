@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head Burner</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+
+<body>
+    <div id="main-container">
+        <section id="first-container" aria-label="conteúdo principal">
+            <div id="intro-container">
+                <h1 tabindex="-1">Seja Bem-vindo(a) ao Game HeadBurner</h1>
+                <p>O objetivo desse jogo é a construção de uma estratégia que permita completar, na vertical, na
+                    horizontal
+                    ou na diagonal, uma sequência de três células em um tabuleiro composto por nove células dispostas em
+                    um
+                    esquema 3 x 3. A partida é feita
+                    por duas pessoas, a primeira recebe como item para completar o tabuleiro um <strong>X</strong>
+                    enquanto
+                    a segunda recebe uma <strong>o</strong> (bolinha).</p>
+                <h2>Instruções Gerais</h2>
+                <p>Fique atento às seguintes instruções antes de iniciar o jogo</p>
+                <al>
+                    <li>Utilize o atalho para navegar por marcos em seu leitor de tela para alternar
+                        entre a
+                        seção principal / do tabuleiro e a seção da pontuação, que também mostra demais informações dos
+                        jogadores.
+                    </li>
+                    <li>Para navegar pelo tabuleiro, utilize os atalhos (alt+1~9) ou a tecla tab e marque a célula
+                        desejada pressionando espaço.</li>
+                    <li>Não é permitido remarcar células</li>
+                    <li>Verifique o histórico de suas partidas (disponível até que a página seja fechada) na seção
+                        informações da partida.</li>
+                    <li>Se uma sequência correta for obtida ou nenhum dos jogadores conseguir completar nenhuma linha /
+                        coluna, o tabuleiro ficará indisponível. Utilize as setas para revisar a partida e, se assim
+                        quiser, recomece novamente.</li>
+                </al>
+
+                jogo e
+                boa sorte!</p>
+            </div>
+            <section id="board-container" aria-label="Tabuleiro">
+                <h1 id="board-title" tabindex="-1">Tabuleiro</h1>
+
+                <div id="board">
+                    <button id="b1" aria-label="1"></button>
+                    <button id="b2" aria-label="2"></button>
+                    <button id="b3" aria-label="3"></button>
+                    <button id="b4" aria-label="4"></button>
+                    <button id="b5" aria-label="5"></button>
+                    <button id="b6" aria-label="6"></button>
+                    <button id="b7" aria-label="7"></button>
+                    <button id="b8" aria-label="8"></button>
+                    <button id="b9" aria-label="9"></button>
+                </div>
+                <p aria-live="polite" id="adding-cells-feedback"></p>
+                <p id="accessible-current-player-report" aria-live="polite">sqwqwqwqwqw</p>
+            </section>
+        </section>
+
+        <section id="game-info-container" aria-label="Status e menu lateral">
+            <div id="getting-players-name">
+                <h2 id="game-info-title">Dados dos Jogadores</h2>
+                <p>Informe seu nome e de seu parceiro de jogo nos campos a seguir</p>
+                <label for="player-1-name">Digite Seu Nome </label><br>
+                <input type="text" id="player-1-name" placeholder="Digite apenas o 1° nome">
+                <label for="player-2-name">Digite o Nome de Seu Parceiro</label><br>
+                <input type="text" id="player-2-name" placeholder="Digite apenas o 1° nome" maxlength="20">
+                <button id="game-start">INICIAR JOGO</button>
+                <span aria-live="polite" id="area-error-input"></span>
+            </div>
+            <div id="players-container">
+                <h2>Informações da Partida</h2>
+                <div id="game-status-zone">
+                    <div id="player-1">
+                        <span id="current-player-to-play"><strong></strong></span><br>
+                        <span id="status-player-1">(Jogando)</span>
+                    </div>
+                    <div id="player-2">
+                        <span id="standby-player"><strong></strong></span><br>
+                        <span id="status-player-2">(Em
+                            Espera)</span>
+                    </div>
+                </div>
+                <div id="finished" tabindex="-1">
+                    <p>Partida Finalizada</p>
+                </div>
+                <div id="next-matches-default-msg">
+                    <h3>Partidas Anteriores</h3>
+                    <p>Conforme partidas são terminadas, as mesmas aparecem aqui.</p>
+                </div>
+                <div id="previews-matches">
+                    <h4>Partidas Anteriores</h4>
+                    <div id="matches">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Cristiano Perogil - Todos os Direitos Reservados. Dúvidas / sugestões? </p><button class="contacte-me-btn"
+            id="modal__show">Contacte me</button>
+    </footer>
+    <!-The modal of the page-!>
+        <div id="modal" class="modal" role="dialog" aria-labelledby="form-title" tabindex="-1">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="form-title">O que achou do Jogo</h2><button id="modal__close" class="close"
+                        aria-label="fechar">&times;</button>
+                </div>
+
+                <p>O que achou do jogo? Eu adoraria sujestões acerca do que eu poderia fazer para melhorar, então
+                    não se acanhe, mande-me uma mensagem com dúvidas / críticas que será um prazer respondê-la </p>
+                <div class="modal-body">
+                    <form name="contact" method="POST" data-netlify="true" id="contact">
+                        <label for="name">Seu nome</label><br>
+                        <input type="text" id="name" name="name" placeholder="Digite aqui"><br>
+                        <label for="email">Seu Email</label><br>
+                        <input type="text" id="email" name="email" placeholder="Digite aqui"><br>
+                        <label for="message">Sua Mensagem</label><br>
+                        <textarea id="message" name="message" placeholder="Diga-me o que pensa"></textarea>
+                        <button>Próximo</button>
+                    </form>
+                    <div id="area-form-checkout">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./assets/scripts/script.js"></script>
+        <script src="./assets/scripts/modal_script.js"></script>
+        <script src="./assets/scripts/formValidation.js"></script>
+</body>
+
+</html>
