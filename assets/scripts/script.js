@@ -1,4 +1,5 @@
 // Getting the required containers
+const title = document.querySelector("title");
 const firstContainer = document.getElementById("first-container");
 const introContainer = document.getElementById("intro-container");
 const boardContainer = document.getElementById("board-container");
@@ -46,6 +47,7 @@ gameStartBtn.onclick = () => {
 
 // Displaying the board and the game status section
 function displayingBoardAndGameInfo() {
+    title.innerText = `Partida ${match + 1} em andamento`
     introContainer.style.display = 'none';
     boardContainer.style.display = 'flex';
     gettingPlayersNameContainer.style.display = 'none';
@@ -96,12 +98,13 @@ function PressingCells(event) {
     }
     checkingFullfillment();
     if (boardComplete) {
+        title.textContent = `Partida ${match} concluída]`
         msg.style.display = 'block';
         gameStatusZone.style.display = 'none';
         finishedGameMsg.style.display = 'block';
         finishedGameMsg.focus();
         previewsMatches.style.display = 'none';
-        msg.innerHTML = `<p>Deseja realizar outra partida</p><button onclick='restart()'>SIM</button><button onclick='finish()'>NÃO</button>`;
+        msg.innerHTML = `<p>Deseja realizar outra partida?</p><button onclick='restart()'>SIM</button><button onclick='finish()'>NÃO</button>`;
         // Unabling the cells from being tapped
         boardCells.forEach(item => {
             item.disabled = true;
@@ -177,6 +180,7 @@ function clear(area) {
 
 // Restarting 
 function restart() {
+    title.textContent = `Partida ${match + 1} em andamento]`;
     boardComplete = false
     tappingCells = 0;
     msg.style.display = 'none';
